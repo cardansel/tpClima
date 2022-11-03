@@ -5,35 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <div class="container day" id="container">
-        <div class="inputTemp">
-            <form action="" class="search_input" id="search_input">
-                <input type="text" name="" id="search_input" class="search" placeholder="Entra tu localizacion...">
-                <button type="submit"></button>
-            </form>
-            <div class="inputTemp_number">
-                <div class="inputTemp_celsius" id="degreeNumber">15</div>
-                <div class="inputTemp_symbol">°C</div>
-            </div>
-            <div id="weatherIcon"></div>
-            <div class="inputTemp_description" id="desciption">Nuboso</div>
+    <header>
+        <h1>My Website</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="about.html">Acerca de</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Contenido principal</h2>
+        <br>
+        <div class="result">
+            <h3>Resultado</h3>
+            <p>El resultado es: <span id="result"></span></p>
         </div>
-
-        <div class="location">
-            <div class="location_city" id="timezone">Ushuaia</div>
-            <div class="location_date" id="date">Fecha: 01/11/2022</div>
-        </div>
-
-        <div class="weather">
-            <div class="weather_min"><small>min</small><span id="min">12</span>°C</div>
-            <div class="weather_max"><small>max</small><span id="max">20</span>°C</div>
-        </div>
-    </div>
-
-    <script src="js/app.js"></script>
+    </main>
+    <section>
+        <h3>Sección</h3>
+    </section>
+    <article>
+        <h4>Artículo</h4>
+    </article>
+    <aside>
+        <h5>Barra lateral</h5>
+    </aside>
+    <footer>
+        <h6>Pie de página</h6>
+    </footer>
 </body>
 </html>
