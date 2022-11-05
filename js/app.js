@@ -36,28 +36,57 @@ function callAPI()
 
 function showWeather(data) 
 {
-const{longitude,latitude}=data;
+const{longitude,latitude,timezone,daily}=data;
 const{temperature_2m,apparent_temperature,precipitation,windspeed_10m}=data.hourly;
 
-data.hourly.time[0]=moment().format('MMMM Do YYYY, h:mm:ss a');
-const hora=data.hourly.time[0]=moment().add(1, 'hours').format('MMMM Do YYYY, h:mm:ss a');
 
-console.log(hora);
+
+//data.hourly.time=moment().format('MMMM Do YYYY, h:mm:ss a');
+//let hora=data.hourly.time[0]=moment().add(1, 'hours').format('MMMM Do YYYY, h:mm:ss a');
+
+//console.log(hora);
+
+//data.hourly.time=moment().subtract(6, 'days').calendar();//
+
+//console.log(data.hourly.time);
+
+console.log(daily);
+for (let i = 0; i < data.hourly.time.length; i++) {
+  
+  data.hourly.time[i]=moment().format('lll');
+  console.log(data.hourly.time[i]);
+    
+}
+//format hora
+var horalocal=new Date();
+horalocal=moment().format('lll');
+console.log(horalocal);
+var hora=data.hourly.time[0];
+if(hora==horalocal)
+{
+  console.log(hora,horalocal);
+  return true;
+  
+}else{
+  return false;
+}
+
+
+
+
 
 const content=document.createElement("div");
 content.innerHTML=`
 <div class="card">
 <div class="card-body">
-<h5 class="card-title">Coordenadas</h5>
-<p class="card-text">Longitud: ${longitude}</p>
-<p class="card-text">Latitud: ${latitude}</p>
-<p class="card-text">Hora: ${hora}</p>
-<p class="card-text">Temperatura: ${temperature_2m[0]}</p>
-<p class="card-text">Temperatura: ${apparent_temperature[0]}</p>
-<p class="card-text">Precipitaciones: ${precipitation[0]}</p>
-<p class="card-text">Velocidad del Viento: ${windspeed_10m[0]}</p>
+
+<p class="card-text">${hora}</p>
+<p class="card-text">${daily}</p>
+
 </div>
 </div>
 `;
 result.appendChild(content);
+
+
 }
